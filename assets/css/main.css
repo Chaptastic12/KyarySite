@@ -1,0 +1,498 @@
+body{
+	background: rgba(161, 59, 77);
+}
+
+.container {
+	min-width:80%;
+	background: rgba(255,255,255, 0.8);
+	padding-top:20px;
+}
+
+.navbar{
+    width:280px;
+    margin-top:20px;
+    margin-left:5%;
+    border-radius:25px;
+    opacity: 0.9;
+}
+
+.short-title {
+	display:none;
+}
+
+@media only screen and (max-width:767px){
+	.full-title{
+		display:none;
+	}
+	.short-title{
+		display:inline-block;
+	}
+	.navbar{
+		width:150px;
+	}
+
+}
+
+/*Fade class so that our Divs will fade into existence when scrolled upon*/
+.fade {
+	opacity: 1;
+}
+
+.pulse{
+	background: transparent;
+	border-radius: 50%;
+	box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
+	transform: scale(1);
+	animation: pulse 2s infinite;
+}
+
+@keyframes pulse{
+	0% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+	}
+
+	70% {
+		transform: scale(1);
+		box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+	}
+
+	100% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+	}
+}
+
+.navbar-light .navbar-toggler{
+	border-color:transparent;
+}
+button:focus{
+	outline:none;
+}
+
+/*================================
+		CSS FOR THE HEADER
+=================================*/
+.header {
+	/*ADDING A GRADIENT*/
+    background-image: linear-gradient(to right bottom, rgba(228,67,67,0.7), rgba(241,161,161,0.6)), url(../img/kyary1.jpg);
+    background-size: cover;/*Fill the whole div*/
+    background-repeat: no-repeat;/*Don't repeat*/
+    background-position: center;
+	/*TO CLIP OUT PART OF THE IMAGE*/
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 55vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 60vh, 0 100%);
+    height: 75vh;
+    color:white;
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 0.8s;
+}
+
+
+.header-text {
+	position: relative;
+	top:45%;
+}
+
+@keyframes fadeInOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 750px){
+	.header{
+		-webkit-clip-path: polygon(0 0, 100% 0, 100% 40vh, 0 100%);
+    	clip-path: polygon(0 0, 100% 0, 100% 40vh, 0 100%);
+    	height: 50vh;
+	}
+}
+
+/*=================================
+		CSS FOR THE INFO
+==================================*/
+
+.info{
+	font-size: min(2.0vw, 1rem);
+	padding:2%;
+	margin-bottom:90px;
+}
+.info-text {
+	margin-top:15px; 
+	display: flex;
+  	justify-content: center;
+}
+
+.divider {
+	border: 1px solid gray;
+	width:50%;
+}
+
+.info-blurb {
+	align-self: center;
+  	padding: 2rem;
+}
+
+.carousel-size {
+	max-width:400px;
+	align-self: center;
+  	padding: 2rem;
+}
+
+.carousel-item{
+	max-height:50%;
+	max-width:100%;
+}
+.carousel-inner{
+	box-shadow: 0 1.5rem 4rem rgba(0,0,0,0.2);
+}
+
+.carousel-inner .carousel-item {
+  transition: -webkit-transform 1s ease;
+  transition: transform 1s ease;
+  transition: transform 1s ease, -webkit-transform 1s ease;
+}
+
+@media screen and (max-width: 767px) {
+	.info{
+		margin-bottom:160px;
+	}
+
+	.carousel-item{
+		max-height:271px;
+	}
+}
+
+/*=================================
+		CSS FOR ALBUMS
+==================================*/
+
+
+.top-album-wave{
+	margin-top: -200px;
+}
+
+.discography {
+  background: rgba(253,175,175,0.6);
+  border-radius: 50px;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+.bottom-album-wave{
+	margin-top:0px;
+}
+
+.music-wrap{
+    width:100%;
+    height:400px;
+}
+.music-container{
+    width:100%;
+    height:100%;
+    overflow:scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+.music-albums{
+    display:inline-block;
+    width:400px;
+    height:400px;
+    line-height:80px;
+    text-align:center;
+    margin-bottom:4px;
+    background-position: center;
+    background-size: cover;
+}
+
+
+/*===========================
+		FAN CLUB CSS
+============================*/
+
+.fan-club {
+	height:100%;
+	margin-top:-135px;
+	background-image: linear-gradient(0deg, rgba(253,175,175,0.5),  rgba(253,175,175,0.5)), url(../img/kyary-concert.jpg);
+    background-size: cover;
+    background-position:center;
+    -webkit-clip-path: polygon(0 21%, 100% 0%, 100% 79%, 0 100%);
+    clip-path: polygon(0 21%, 100% 0%, 100% 79%, 0 100%);
+    border-radius: 3px;
+    padding: 6rem;
+    font-size: 1.6rem;
+}
+
+/* The flip card container */
+.flip-card {
+  width: 240px;
+  height: 325px;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  margin: 5px;
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: rgba(255,255,255,0.5);
+  color: black;
+}
+
+/* Style the back side */
+.flip-card-back {
+  background-color: rgba(255,255,255, 0.6);
+  color: black;
+  transform: rotateY(180deg);
+}
+
+.basic-tier{
+	background-image: linear-gradient(0deg, rgba(161,59,77,0.3),  rgba(161,59,77,0.3)), url("../img/kyary-basic.jpg");
+	background-size: cover;
+	-webkit-clip-path: polygon(0 0, 100% 0, 100% 90px, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 90px, 0 100%);
+    height:120px;
+    color:white;
+}
+
+.pro-tier{
+	background-image: linear-gradient(0deg, rgba(161,59,77,0.3),  rgba(161,59,77,0.3)), url("../img/kyary-pro.jpg");
+	background-size: cover;
+	-webkit-clip-path: polygon(0 0, 100% 0%, 100% 90px, 0 90px);
+    clip-path: polygon(0 0, 100% 0%, 100% 90px, 0 90px);
+    height:120px;
+    color:white;
+}
+
+.harajuku-tier{
+	background-image: linear-gradient(0deg, rgba(161,59,77,0.3),  rgba(161,59,77,0.3)), url("../img/kyary-harajuku.jpg");
+	background-size: cover;
+	-webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90px);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90px);
+    height:120px;
+    color:white;
+}
+
+@media screen and (max-width: 991px){
+	.fan-club{
+		margin-top:-70px;
+	}
+	.pro-tier{
+		background-image: linear-gradient(0deg, rgba(161,59,77,0.3),  rgba(161,59,77,0.3)), url("../img/kyary-pro.jpg");
+		background-size: cover;
+		-webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90px);
+    	clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90px);
+	    height:120px;
+	    color:white;
+			} 
+	.harajuku-tier{
+		background-image: linear-gradient(0deg, rgba(161,59,77,0.3),  rgba(161,59,77,0.3)), url("../img/kyary-harajuku.jpg");
+		background-size: cover;
+		-webkit-clip-path: polygon(0 0, 100% 0, 100% 90px, 0 100%);
+	    clip-path: polygon(0 0, 100% 0, 100% 90px, 0 100%);
+	    height:120px;
+	    color:white;
+	}
+}
+
+@media screen and (max-width: 768px){
+	.kpp-mania{
+		margin-top:80px;
+	}
+
+	.fan-club{
+		background: rgba(253,175,175);
+	}
+
+	.pro-tier{
+		background-image: linear-gradient(0deg, rgba(161,59,77,0.3),  rgba(161,59,77,0.3)), url("../img/kyary-pro.jpg");
+		background-size: cover;
+		-webkit-clip-path: polygon(0 0, 100% 0, 100% 90px, 0 100%);
+	    clip-path: polygon(0 0, 100% 0, 100% 90px, 0 100%);
+	    height:120px;
+	    color:white;
+	} 
+}
+
+.fan-club li{
+	list-style: circle;
+	text-align: left;
+} 
+.wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.inner {
+  align-self: center;
+}
+
+/*===========================
+	CONTACT FORM CSS
+=============================*/
+.contact{
+	background-color: rgba(161,59,77,0.3);
+	height:500px;
+}
+
+.left-contact{
+	background-image: linear-gradient(0deg, rgba(161,59,77,0.3),  rgba(161,59,77,0.3)), url("../img/kyary2.jpg");
+	background-size: cover;
+	background-position: center;
+	-webkit-clip-path: polygon(0 0, 100% 0%, 68% 100%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0%, 68% 100%, 0% 100%);
+    height:500px;
+    width:50%;
+    float:left;
+}
+.right-contact{
+	margin-left:50%;
+	width:50%;
+	height:500px;
+}
+
+.contact-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:white;
+  height: 500px;
+}
+
+.contact-header h1 {
+	background-color: rgba(161,59,77,0.3);
+	padding:5px;
+	border-radius:5px;
+}
+.contact-form {
+  display: flex;
+  align-items: center;
+  height:500px;	
+  margin-left:20px;
+}
+.contact-form input{
+	width:25vw;
+}
+
+/*============================
+		Footer CSS
+============================*/
+
+.footer{
+	margin-right:15px;
+	color:white;
+}
+
+.footer a {
+	color:white;
+}
+
+.footer a:hover {
+	color:pink;
+}
+.footer i{
+	font-size:24px;
+}
+/*============================
+		SCROLLBAR CSS
+=============================*/
+
+/*IE*/
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+.dx {
+        margin-right: -10px;
+        padding-top: 32px;
+        margin-top: -32px;
+        margin-bottom: -32px;
+        padding-bottom: 32px;
+
+        /* ie scrollbar color properties */
+        scrollbar-base-color: #efefef;
+        scrollbar-face-color: #666666;
+        scrollbar-3dlight-color: #666666;
+        scrollbar-highlight-color: #666666;
+        scrollbar-track-color: #efefef;
+        scrollbar-arrow-color: #666666;
+        scrollbar-shadow-color: #666666;
+        scrollbar-dark-shadow-color: #666666;
+  }
+  
+      .dx:after {
+        content: "";
+        height: 32px;
+        display: block;
+    }
+    
+}
+
+/*Edge*/
+@supports (-ms-ime-align:auto)  {
+.dx {
+        margin-right: -10px;
+        padding-top: 16px;
+        margin-top: -16px;
+        margin-bottom: -16px;
+        padding-bottom: 16px;
+}
+  
+.dx:after {
+    content: "";
+    height: 16px;
+    display: block;
+}
+}
+
+/*Firefox*/
+/*From version 64 - https://drafts.csswg.org/css-scrollbars-1/*/
+.dx {
+    scrollbar-width: thin;
+    scrollbar-color: #666666 #efefef;
+}
+
+
+/*Chrome*/
+.dx::-webkit-scrollbar-track {
+    background-color: #efefef;
+    width: 4px;
+}
+
+.dx::-webkit-scrollbar-thumb {
+    background-color: #666666;
+    border: 1px solid transparent;
+    bacground-clip: content-box;
+}
+
+.dx::-webkit-scrollbar {
+    width: 0px;
+    height:7px;
+}
+
+
